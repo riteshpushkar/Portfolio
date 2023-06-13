@@ -1,0 +1,52 @@
+.font {
+    font-family: 'Delicious Handrawn', cursive;
+}
+
+body {
+    height:  100%;
+}
+html{
+    height:  100%;
+}
+
+.container-fluid{
+    min-height: 100%;
+}
+
+/* servics page */
+/* icons */
+.container {
+    min-height: 100%;
+}
+.i-colo {
+    color: chartreuse;
+}
+
+p:link {
+    color: white;
+}
+
+/* subtitle */
+.ss-color {
+    color: whitesmoke;
+}
+
+a.nav-link {
+    color: whitesmoke;
+}
+
+a.nav-link:hover {
+    color: black;
+    background-color: yellow;
+}
+a.nav-link:active {
+    color: black;
+    background-color: #ffc107;
+    font-weight: bold;
+}
+a.nav-link:visited {
+    
+    background-color: #ffc107;
+    font-weight: bold;
+}
+

@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+<!-- <link rel="stylesheet" href="{% static 'core\static\core\css\core.css' %}"> -->
+<style>
+
+a.nav-link {
+    color: whitesmoke;
+}
+
+a.nav-link:hover {
+    color: black;
+    background-color: #daf188;
+}
+a.nav-link:active {
+    color: black;
+    background-color: #ffc107;
+    font-weight: bold;
+}
+a.nav-link:visited {
+    
+    background-color: #ffc107;
+    font-weight: bold;
+}
+.navbar-nav>.active>a {
+            background-color: #C0C0C0;
+            color: green;
+        }
+ 
+    </style>
+</head>
+<body>
+
+
+
+<div class = "border-right border-warning h-100" >
+    <div class = "text-center">
+        <img src="{% static 'core/images/pic1.jpeg'%}" alt="ProfilePic" class="img-fluid  mt-5" width="100px" height = "100px">
+    <h3 class="text-white">Ritesh Pushkar</h3>
+    </div>
+
+    <hr class="border-light">
+    
+    <nav class = "nav flex-column text-center">
+        
+        <!-- <a href="/" class="nav-link">HOME</a> -->
+        <!-- <a href="/serv/services/" class="nav-link">PROJECTS</a> -->
+        <!-- <a href="/edu/skill/" class="nav-link">SKILLS</a> -->
+        <!-- <a href="/contact/" class="nav-link">CONTACT</a> -->
+
+
+        <a href="{% url 'home' %}" class="nav-link {{home}}  ">HOME</a>
+        <a href="{% url 'services' %}" class="nav-link {{services}}">PROJECTS</a>
+        <a href="{% url 'skill' %}" class="nav-link {{skill}}">SKILLS</a>
+        <a href="{% url 'contact' %}" class="nav-link {{contact}}">CONTACT</a>
+
+    </nav>
+</div>
+
+</body>
+</html>

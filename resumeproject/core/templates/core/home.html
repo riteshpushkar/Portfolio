@@ -1,0 +1,48 @@
+{%extends 'core/base.html'%}
+{%load static%}
+{% block content%}
+<div class = "mt-5">
+    <div class = "text-center">
+    <img src="{% static 'core/images/pic1.jpeg'%} " alt="ProfilePic" class = "img-thumbnail" width="250px" height="150px">
+    </div>
+    <div class="text-white mt-5 mx-5 text-justify">
+    <!-- <h1 class = "font-weight-bold font">Hello,</h1> -->
+    <div class="px-4" style="line-height:2rem;">
+        <p style="text-indent:100px"> <b> <h3 class="text-center"> Welcome to my portfolio website! </h3></b>
+        </p>
+        <p>
+            <p>
+                I'm <b class="text-warning">Ritesh Pushkar</b>, 
+                a tech enthusiast with a Bachelor's degree in Electronics and Communication from NIT Hamirpur. 
+                I have experience as a <b class="text-warning">Python Developer Associate Intern</b> at The Entrepreneurship Network, 
+                where I led a team in building REST APIs using Django. 
+                Additionally, I worked as a <b class="text-warning">Software Developer Intern at Food Therapy Pvt Ltd for Six months</b>, 
+                developing a Google authentication page and writing test cases using Python's unittest. 
+                I've completed projects like CRUD operations in Django and automated website interaction using Selenium. 
+                Proficient in Python, Java, Django, and Selenium, I have a strong foundation in <b class="text-warning">DSA, OOPs, DBMS, and web technologies</b>. 
+                Let's connect and explore potential collaborations.
+            </p>
+
+    </p>
+    </div>
+</div>
+<div class="text-center">
+<a href="mailto:riteshpushkar01@gmail.com?feedback" class="btn btn-outline-warning mr-3 my-3">Hire Me</a>
+<a href="{% url 'contact' %}" class="btn btn-outline-info my-3">Contact</a>
+</div>
+</div>
+{% endblock content%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

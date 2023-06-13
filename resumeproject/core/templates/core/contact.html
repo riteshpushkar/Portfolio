@@ -1,0 +1,70 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <div class="text-center">
+    <h1 class="text-warning mb-5 border-bottom">CONTACT</h1>
+    </div>
+    <div class="row text-white mb-5">
+        <p class="mx-auto mb-5">
+            I'd love to hear from you! 
+            Whether you have a question, or simply want to say hello, 
+            please feel free to reach out, using the contact information below. 
+        </p>
+        <div class="col-sm-9 mb-5">
+            <form class="" action="#">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputName">Your Name</label>
+                        <input type="text" class="form-control" id="inputSubject"/>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail">Your Email *</label>
+                        <input type="email" class="form-control" id="inputEmail" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputSubject">Your Subject</label>
+                    <input type="text" class="form-control" id="inputSubject" />
+                </div>
+                <div class="mb-3">
+                    <label for="inputTextarea">Your Message *</label>
+                    <textarea class="form-control" id="inputTextarea" required></textarea>
+                </div>
+                <button class="btn btn-primary" type="submit">Send</button>
+            </form>
+        </div>
+        <div class="col-sm-3 text-center">
+            <ul class="list-unstyled">
+                <li>
+                    <i class="fa-solid fa-location-dot fa-2x i-colo"></i>
+                    <p>
+                        <a href="https://www.google.com/maps/d/u/0/viewer?mid=1B1lAsUpYFg82Je7XN1_cxRPf1UU&hl=en_US&ll=26.808107494600534%2C80.89765045000001&z=14">Lucknow, Uttar Pradesh, India.</a></p>
+                </li>
+                <li>
+                    <i class="fas fa-phone mt-4 fa-2x i-colo"></i>
+                    <p>
+                        <a href="+918887835096">+91 8887835096 </a></p>
+                </li>
+                <li>
+                    <i class="fas fa-envelope mt-4 fa-2x i-colo"></i>
+                    <p>
+                        <a href="mailto: riteshpushkar01@gmail.com"> riteshpushkar01@gmail.com </a></p>
+                </li>
+                <li>
+                    <i class="fa-solid fa-file  mt-4 fa-2x i-colo"></i>
+                    <p>
+                        <a href="https://drive.google.com/file/d/1H3ijmvYsCEmFml9upwtaxQ3Ecak7c7Q4/view?usp=sharing"> Download Resume  </a></p>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+<div class="text-center">
+    <a href="https://www.linkedin.com/in/ritesh-pushkar-b55887195/" target="_blank"><i class="fa-brands fa-linkedin fa-2x i-colo mr-3"></i></a>
+    <a href="https://github.com/riteshpushkar" target="_blank"><i class="fa-brands fa-square-github fa-2x i-colo mr-3"></i></a>
+    <a href="https://www.instagram.com/riteshpuskar/" target="_blank"><i class="fa-brands fa-square-instagram fa-2x i-colo mr-3"></i></a>
+
+
+</div></div>
+{% endblock content %}
