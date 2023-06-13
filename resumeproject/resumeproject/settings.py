@@ -27,8 +27,8 @@ DEBUG = True
 
 # EMAIL_HOST = 'smtp.gmail.com'
 # EMAIL_HOST_USER = 'templates.reboot.in@gmail.com'
-# EMAIL_HOST_PASSWORD = 'fwjvlbyzm
-# ziksqtf'
+# EMAIL_HOST_PASSWORD = 'fwjvlbyzm'
+# EMAIL_HOST_PASSWORD = 'ziksqtf'
 # EMAIL_PORT = 587
 # EMAIL_USE_TLS = True
 # EMAIL_BACKEND = 'django.core.mail.backend.smtp.EmailBackend'
