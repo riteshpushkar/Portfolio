@@ -1,10 +1,230 @@
 {%extends 'core/base.html'%}
 {%load static%}
 {% block content%}
-<div class = "mt-5">
+<style>
+            body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            /* overflow: hidden; Hide overflow to prevent horizontal scrolling */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 300px;
+            height: auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        input[type="text"] {
+            width: 70%;
+            padding: 2px;
+            font-size: 16px;
+            background-color: rgb(203, 196, 196);
+        }
+
+        button {
+            width: 70%;
+            
+            font-size: 14px;
+            background-color: #3c94f2;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+    
+
+        #weather-info {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            text-align: left;
+            padding: 10px;
+        }
+
+        #weather-info p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #333;
+        }
+
+
+        h1 {
+            text-align: center;
+            color: #0a0a0a;
+            margin-top: 50px;
+            font-size: 12px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .clock {
+            font-size: 24px;
+            text-align: center;
+            color: #aeccee; 
+            background-color: #120606; 
+            padding: 0px;
+            border-radius: 60px;
+            box-shadow: 0 0 10px rgba(27, 71, 228, 0.1);
+            width: auto;
+            margin: 0 auto;
+            margin-top: 20px;
+            margin-right: auto;
+        }
+        .Calendar {
+            font-size: 14px;
+            text-align: center;
+            color: #aeccee; 
+            background-color: #120606; 
+            padding: 10px;
+            border-radius: 60px;
+            box-shadow: 0 0 10px rgba(27, 71, 228, 0.1);
+            width: auto;
+            margin: 0 auto;
+            margin-top: 20px;
+            margin-right: auto;
+
+
+        }
+        .weather-disp {
+            font-size: 14px;
+            text-align: center;
+            color: #aeccee; 
+            background-color: #120606; 
+            padding: 10px;
+            border-radius: 60px;
+            box-shadow: 0 0 10px rgba(27, 71, 228, 0.1);
+            width: auto;
+            margin: 0 auto;
+
+            margin-left: auto;
+
+        }
+
+        #month, #year, #city {
+            margin: 5px;
+        }
+        #outer_table {
+            margin-left: 5%;
+        }
+        td{
+            /* margin-left: 16px; */
+            padding-left: 20px;
+        }
+        input[type="number"] {
+            background-color: rgb(228, 217, 217);
+            color: white;
+            max-width: 100px;
+        }
+
+
+</style>
+<div class = "">
+    <table id="outer_table">
+    <tr>
+        <td>
+            <div class="Calendar" id="Calendar">
+                {{ cal|safe }}
+                
+                <form id="Calendar" method="get">
+                    <!-- <label for="month">Enter month number:</label> -->
+                    <input type="number" id="month" name="month" placeholder="Month(MM)">
+                    <!-- <label for="year">Enter year number:</label> -->
+                    <input type="number" id="year" name="year" placeholder="Year(YYYY)" color="white"><br>
+                    <button type="submit">Check Calendar</button>
+                </form>
+            </div>
+
+                <div class="clock" id="clock">
+                    {{time}}    
+                </div>
+    </td>
+    <td>
     <div class = "text-center">
     <img src="{% static 'core/images/pic1.jpeg'%} " alt="ProfilePic" class = "img-thumbnail" width="250px" height="150px">
     </div>
+</td>
+<td>
+    <!-- <div class="container" id="weather_display"> -->
+        
+        
+        <div id="weather-disp" class="weather-disp">
+            <table>
+                <tr>
+                    <td>
+                        <p><strong>Temperature:</strong> {{temperature}}°C</p>   
+                    </td>
+                    &ensp;
+                    <td>
+    
+                        <p><strong>Weather:</strong> {{  weather  }} </p> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        
+                        <p><strong>Humidity:</strong> {{humidity}}%</p> 
+                    </td>
+                    &ensp;
+                    <td>
+                        <p><strong>Pressure:</strong>{{pressure}}hPa</p> 
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        
+                        <p><strong>Sunrise:</strong> {{sunrise}}</p> 
+                    </td>
+                    &ensp;
+                    <td>
+                        <p><strong>Sunset:</strong> {{sunset}}</p>
+
+                    </td>
+                </tr>
+                <tr>
+                    <h4><strong>{{city}}</strong></h4> 
+                    
+                </tr>
+            </table>
+            
+            <form id="weather-form" method="get">
+                <input type="text" id="city" name="city" placeholder=" Enter Your City Name" required width="200px"><br>
+                <button type="submit">Get Weather</button>
+            </form>
+        </div>
+    </div>
+
+</td>
+</tr>
+</table>
     <div class="text-white mt-5 mx-5 text-justify">
     <!-- <h1 class = "font-weight-bold font">Hello,</h1> -->
     <div class="px-4" style="line-height:2rem;">
@@ -14,8 +234,7 @@
             <p>
                 I'm <b class="text-warning">Ritesh Pushkar</b>, 
                 a tech enthusiast with a Bachelor's degree in Electronics and Communication from NIT Hamirpur. 
-                I have experience as a <b class="text-warning">Python Developer Associate Intern</b> at The Entrepreneurship Network, 
-                where I led a team in building REST APIs using Django. 
+                I have experience as a<b class="text-warning"><br>Full Stack Developer </b>at The Connect Dot Corp. Where I developed <b class="text-warning">IIT Bhubneshwar Merchandise Portal</b> apart from this I also worked as <b class="text-warning">Python Developer Associate Intern</b> at The Entrepreneurship Network, 
                 Additionally, I worked as a <b class="text-warning">Software Developer Intern at Food Therapy Pvt Ltd for Six months</b>, 
                 developing a Google authentication page and writing test cases using Python's unittest. 
                 I've completed projects like CRUD operations in Django and automated website interaction using Selenium. 
@@ -26,6 +245,7 @@
     </p>
     </div>
 </div>
+
 <div class="text-center">
 <a href="mailto:riteshpushkar01@gmail.com?feedback" class="btn btn-outline-warning mr-3 my-3">Hire Me</a>
 <a href="{% url 'contact' %}" class="btn btn-outline-info my-3">Contact</a>

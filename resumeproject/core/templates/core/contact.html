@@ -1,5 +1,6 @@
 {% extends 'core/base.html' %}
 {% block content %}
+
 <div class="container mt-5">
     <div class="text-center">
     <h1 class="text-warning mb-5 border-bottom">CONTACT</h1>
@@ -11,24 +12,25 @@
             please feel free to reach out, using the contact information below. 
         </p>
         <div class="col-sm-9 mb-5">
-            <form class="" action="#">
+            <form class="contacts" method="post">
+                {% csrf_token %}
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputName">Your Name</label>
-                        <input type="text" class="form-control" id="inputSubject"/>
+                        <input type="text" class="form-control" id="name"/>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputEmail">Your Email *</label>
-                        <input type="email" class="form-control" id="inputEmail" required />
+                        <input type="email" class="form-control" id="email" required />
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputSubject">Your Subject</label>
-                    <input type="text" class="form-control" id="inputSubject" />
+                    <input type="text" class="form-control" id="subject" />
                 </div>
                 <div class="mb-3">
                     <label for="inputTextarea">Your Message *</label>
-                    <textarea class="form-control" id="inputTextarea" required></textarea>
+                    <textarea class="form-control" id="message" required></textarea>
                 </div>
                 <button class="btn btn-primary" type="submit">Send</button>
             </form>
@@ -38,7 +40,7 @@
                 <li>
                     <i class="fa-solid fa-location-dot fa-2x i-colo"></i>
                     <p>
-                        <a href="https://www.google.com/maps/d/u/0/viewer?mid=1B1lAsUpYFg82Je7XN1_cxRPf1UU&hl=en_US&ll=26.808107494600534%2C80.89765045000001&z=14">Lucknow, Uttar Pradesh, India.</a></p>
+                        <a href="https://www.google.com/maps/place/Lucknow,+Uttar+Pradesh/@26.8489028,80.7777012,11z/data=!3m1!4b1!4m6!3m5!1s0x399bfd991f32b16b:0x93ccba8909978be7!8m2!3d26.8466937!4d80.946166!16zL20vMDIydHE0?entry=ttu">Lucknow, Uttar Pradesh, India.</a></p>
                 </li>
                 <li>
                     <i class="fas fa-phone mt-4 fa-2x i-colo"></i>
@@ -48,12 +50,12 @@
                 <li>
                     <i class="fas fa-envelope mt-4 fa-2x i-colo"></i>
                     <p>
-                        <a href="mailto: riteshpushkar01@gmail.com"> riteshpushkar01@gmail.com </a></p>
+                        <a href="mailto: riteshpushkar.sde@gmail.com"> riteshpushkar.sde@gmail.com </a></p>
                 </li>
                 <li>
                     <i class="fa-solid fa-file  mt-4 fa-2x i-colo"></i>
                     <p>
-                        <a href="https://drive.google.com/file/d/1n0JxU1UJbUnAMRO2f01OpFPCMmkeAKcZ/view?usp=drive_link"> Download Resume  </a></p>
+                        <a href="https://drive.google.com/drive/folders/1Vc5E9MPwKQbpUYO80v4MVuo4GdqLuHJ6"> Download Resume  </a></p>
                 </li>
 
             </ul>
@@ -64,6 +66,8 @@
     <a href="https://www.linkedin.com/in/ritesh-pushkar-b55887195/" target="_blank"><i class="fa-brands fa-linkedin fa-2x i-colo mr-3"></i></a>
     <a href="https://github.com/riteshpushkar" target="_blank"><i class="fa-brands fa-square-github fa-2x i-colo mr-3"></i></a>
     <a href="https://www.instagram.com/riteshpuskar/" target="_blank"><i class="fa-brands fa-square-instagram fa-2x i-colo mr-3"></i></a>
+    <a href="https://twitter.com/ritesh_pushkar" target="_blank"><i class="fa-brands fa-square-twitter fa-2x i-colo mr-3"></i></a>
+    <a href="https://leetcode.com/ritesh_pushkar/" target="_blank"><i class="fa-solid fa-code fa-2x i-colo mr-3"></i></i></a>
 
 
 </div></div>
