@@ -1,5 +1,5 @@
-{% extends 'core/base.html' %}
-{%block content%}
+<!-- ---------x---------x---------x-----old code---------x---------x---------x---------x---------x---------x-----old code---------x---------x---------x
+
 <div class="container text-center mt-5">
     <h1 class="text-warning mb-5 border-bottom">PROJECTS</h1>
 
@@ -11,7 +11,7 @@
             
         </div>
         <div class="col sm-4">
-            <!-- <i class="fa-solid fa-laptop-code fa-5x mb-5 i-colo"> </i> -->
+            
             <i class="fa-solid fa-window-restore fa-5x mb-5 i-colo"></i>
             <h3>CRUD</h3>
             <p>Implemented Create, Read, Update, and Delete operations using Django framework (Python)</p>
@@ -19,7 +19,7 @@
         </div>
 
         <div class="col sm-4">
-            <!-- <i class="fa-solid fa-laptop-code fa-5x mb-5 i-colo"> </i> -->
+            
             <i class="fa-solid fa-file-export fa-5x mb-5 i-colo"></i>
             <h3>WebAutomation</h3>
             <p>Automated Website to search for items, add to cart, fill details, make payment and check out using Selenium(Python)</p>
@@ -30,19 +30,14 @@
 
     <div class="row text-white">
         <div class="col sm-4">
-            <!-- <i class="fa-solid fa-laptop-code fa-5x mb-5 mt-5 i-colo"> </i> -->
-            <!-- <i class="fa-solid fa-highlighter fa-5x mb-5 i-colo"></i> -->
-            <!-- <i class="fa-solid fa-envelope-open-text fa-5x mb-5 i-colo"></i> -->
-            <!-- <i class="fa-regular fa-file-lines fa-5x mb-5 mt-5 i-colo"></i> -->
+            
             <i class="fa-solid fa-volume-high fa-5x mb-5 mt-5 i-colo"></i>
-            <!-- <i class="fa-solid fa-headphones-simple fa-5x i-colo"></i> -->
+            
             <h3>TTS</h3>
             <p>Text to Speech Research project based on Tacotron2 model by Google under Dr.Philemon Daniel(NITH)</p>
             
         </div>
         <div class="col sm-4">
-            <!-- <i class="fa-solid fa-laptop-code fa-5x mb-5 i-colo"> </i> -->
-            <!-- <i class="fa-solid fa-window-restore fa-5x mb-5 mt-5 i-colo"></i> -->
             <i class="fa-solid fa-calculator fa-5x mb-5 mt-5 i-colo"></i>
 
             <h3>Calculator</h3>
@@ -51,8 +46,6 @@
         </div>
 
         <div class="col sm-4">
-            <!-- <i class="fa-solid fa-laptop-code fa-5x mb-5 mt-5 i-colo"> </i> -->
-            <!-- <i class="fa-solid fa-calculator fa-5x mb-5 mt-5 i-colo"></i> -->
             <i class="fa-solid fa-temperature-quarter fa-5x mb-5 mt-5 i-colo"></i>
             <h3>LED Thermometer</h3>
             <p>A visual system using LM35, LM3914, Potentiometer, and LED bulbs to display temperature conditions</p>
@@ -61,4 +54,174 @@
 
     </div>
 </div>
+
+---------x---------x---------x-----old code---------x---------x---------x---------x---------x---------x-----old code---------x---------x---------x
+ -->
+
+
+
+
+
+
+{% extends 'core/base.html' %}
+{%block content%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title style="color: white;">Welcome to Ritesh Pushkars slider Page</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(82, 77, 77);
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #faff5a;
+        }
+        h3 {
+            text-align: center;
+            color: rgb(194, 227, 148);
+        }
+
+        .swiper-container {
+            width: 80%; /* Adjust width as needed */
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .swiper-slide img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: 500px;
+            overflow: hidden;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .swiper-slide:hover img {
+            transform: scale(.80);
+        }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            position: absolute;
+            z-index: 10;
+            transition: background-color 0.3s ease;
+        }
+
+        .swiper-button-prev:hover,
+        .swiper-button-next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .swiper-button-prev {
+            left: 10px;
+        }
+
+        .swiper-button-next {
+            right: 10px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .swiper-container,
+        .swiper-slide {
+            animation: fadeIn 1s ease-in-out;
+        }
+        .container {
+            text-align: center;
+            margin-top: 20px;
+            color: yellow;
+        }
+        a {
+            color: yellow;
+            padding: 10px;
+            border-color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My Page!!!</h1>
+    <br><h3>Use Swiper Button to stop AutoPlay</h3>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="\static\images\0.png" alt="Project 1">
+                <div class="container">
+                    Portfolio website <br>
+                    <a href="https://github.com/riteshpushkar/Portfolio.git"><h3> GitHub Link </h3></a>
+                </div>
+
+            </div>
+            <div class="swiper-slide"><img src="\static\images\4.png" alt="Project 3">
+                <div class="container">
+                    CRUD <br>
+                    <a href="https://github.com/riteshpushkar/CRUD-django-project.git"><h3> GitHub Link </h3></a>
+                </div>
+            </div>
+            <div class="swiper-slide"><img src="\static\images\3.png" alt="Project 2">
+                <div class="container">
+                    Current Time Clock and Calendar <br>
+                    <a href="https://github.com/riteshpushkar/Time-Calendar.git"><h3> GitHub Link </h3></a>
+
+                </div>
+            </div>
+            <div class="swiper-slide"><img src="\static\images\1.png" alt="Project 4">
+                <div class="container">
+                    Weather Report <br>
+                    <a href="https://github.com/riteshpushkar/weather-app.git"><h3> GitHub Link </h3></a>
+                </div>
+            </div>
+            <div class="swiper-slide"><img src="\static\images\5.png" alt="Project 4">
+                <div class="container">
+                    Automated Order Placement <br>
+                    <a href="https://github.com/riteshpushkar/Automated-Order-Placement.git"><h3> GitHub Link </h3></a>
+                </div>
+            </div>
+        </div>
+        <!-- Add Navigation Buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+    
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            loop: true,
+            autoplay: {
+                delay: 1000,
+                disableOnInteraction: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+</body>
+</html>
+
 {%endblock content%}

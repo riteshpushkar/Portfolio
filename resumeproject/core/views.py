@@ -2,6 +2,8 @@ from django.shortcuts import render
 import requests
 from datetime import datetime, timedelta
 from calendar import HTMLCalendar
+from .models import *
+from django.http import HttpResponse
 
 def convert_to_ist(timestamp):
     # Convert the UNIX timestamp to a datetime object
@@ -88,10 +90,69 @@ def home(request):
 
     # ---x---x---x---x---x---   clock and calander ends   ---x---x---x---x---x---x---x---x---x
 
+from django.shortcuts import render, HttpResponse
+from .models import Contact  # Import your Contact model if not imported already
+
 def contact(request):
-    if request.method == 'post' :
-        data = request.POST.get("email")
-        print(data)
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        subject = request.POST.get('subject')
+        description = request.POST.get('message')
+        
+        Contact.objects.create(name=name, email=email, subject=subject, message=description)
+
+        response_html = f"""
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Contact Form Response</title>
+                <style>
+                    body {{
+                        background-color: #000;
+                        color: #fff;
+                        font-family: Arial, sans-serif;
+                        margin: 0;
+                        padding: 0;
+                        text-align: center;
+                    }}
+                    .container {{
+                        max-width: 600px;
+                        margin: 100px auto;
+                        padding: 20px;
+                        border-radius: 10px;
+                        background-color: #333;
+                    }}
+                    ul {{
+                        list-style-type: none;
+                        padding: 0;
+                    }}
+                    li {{
+                        margin-bottom: 10px;
+                    }}
+                </style>
+            </head>
+            <body>
+                <div class="container">
+                    <h1>Your message has been saved successfully!</h1>
+                    <p>Your message with the following details:</p>
+                    <ul>
+                        <li>Name: {name}</li>
+                        <li>Email: {email}</li>
+                        <li>Subject: {subject}</li>
+                        <li>Description: {description}</li>
+                    </ul>
+                    <p>has been saved successfully in the database.</p>
+                    <p>For quick reply, please use email/LinkedIn, as your message might be lost or not checked.</p>
+                </div>
+            </body>
+            </html>
+        """
+
+        return HttpResponse(response_html)
 
     context = {'contact': 'active'}
     return render(request, 'core/contact.html', context)
+
