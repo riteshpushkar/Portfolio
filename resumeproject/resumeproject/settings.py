@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-8mq^sgf*#uhl4e^a34nes8m)i6qjdi@av5l%xc%4dk%l9dv&qj'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # EMAIL_HOST = 'smtp.gmail.com'
 # EMAIL_HOST_USER = 'templates.reboot.in@gmail.com'
@@ -34,7 +34,7 @@ DEBUG = False
 # EMAIL_USE_TLS = True
 # EMAIL_BACKEND = 'django.core.mail.backend.smtp.EmailBackend'
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['.vercel.app','now.sh','127.0.0.1','localhost']
+# ALLOWED_HOSTS = ['.vercel.app','now.sh','127.0.0.1','localhost']
 
 
 # Application definition
@@ -88,12 +88,8 @@ WSGI_APPLICATION = 'resumeproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'A*FFc-cc1b2CBbE-B1b3aDDBdeaf5deb',
-        'HOST': 'roundhouse.proxy.rlwy.net',
-        'PORT': '53680',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -139,5 +135,3 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
